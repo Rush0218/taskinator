@@ -13,6 +13,12 @@ var taskFormHandler = function(event) {
     }
 
     formEl.reset(); 
+
+    //reset form fields for new task to be added
+    document.querySelector("input[name='task-name]").value = ""; 
+    document.querySelector("select[name='task-type']").selectIndex = 0; 
+
+
     //package up data as an object
     var taskDataObj = {
         name: taskNameInput, 
@@ -21,9 +27,7 @@ var taskFormHandler = function(event) {
 
     //send it as an argument
     createTaskEl(taskDataObj); 
-
-    
-}
+}; 
 
 var createTaskEl = function(taskDataObj) {
     // create list item
