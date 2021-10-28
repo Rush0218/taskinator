@@ -225,6 +225,16 @@ var saveTasks = function() {
 
 }; 
 
+var loadTasks = function() {
+    //get items from local storage 
+    var savedTasks = localStorage.getItem("tasks");
+
+    //convert tasks from string format back to an array object 
+    if(!savedTasks) {
+        return false; 
+    } 
+    savedTasks = JSON.parse(savedTasks);
+};
 
 
   
